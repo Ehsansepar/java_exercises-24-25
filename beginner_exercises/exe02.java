@@ -1,19 +1,26 @@
-package beginner_exercises;
+// Ecrire un script qui permet d'afficher les 10 premiers termes de n'importe quelle table de
+// multiplication, utilisez i dans votre multiplication. (1, 2, 6, 3, 4)
 
+
+package beginner_exercises;
+import java.util.Scanner;
 
 public class exe02 {
     public static void main(String[] args) {
-        int i = 0;
+        
+        Scanner scanner = new Scanner(System.in);
+        
+        int nbr_choisi;
+        System.out.print("Entrer un nombre pour sa Table Multiplication : ");
+        nbr_choisi = scanner.nextInt();
 
-        String myStr = "Hello %o! One kilobyte is %,d bytes.";
-        String result = String.format(myStr, 5, 1024);
-        System.out.println(result);
-
-
+        int i = 1;
         while(i <= 10) {
-            String table = "%s X %s = ";
-            // System.out.println(String.format(, args));
+            // String table = "%d X 3 = %d", i;
+            System.out.printf("%1d X %d = %3d\n", i,nbr_choisi , (i*nbr_choisi));
             i++;
         }
+
+        scanner.close();
     }
 }
