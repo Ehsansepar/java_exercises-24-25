@@ -8,14 +8,20 @@ import java.util.Scanner;
 public class exe04 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
+        int somme = 0;
+        
         for (int i = 1; i <= 5;i++) {
             if (i == 1) {
-                System.out.printf("Entrer votre %dere note : ");
+                System.out.printf("Entrer votre %dere note : ", i);
             }
             else {
-                System.out.printf("Entrer votre %deme notre : ");
+                System.out.printf("Entrer votre %deme notre : ", i);
             }
-        }
+            
+            int note = scanner.nextInt();
+            somme += note;
+        }    
+        System.out.print("La somme des note est : " + somme);
+        scanner.close();
     }
 }
