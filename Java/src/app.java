@@ -27,3 +27,4 @@ public class app {
         scanner.close();
     }
 }
+weekend
