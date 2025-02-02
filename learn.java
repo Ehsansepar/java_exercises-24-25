@@ -135,9 +135,10 @@ public class learn {
             case "Saturday" -> System.out.println("Today is Saturday");
             case "Sunday" -> System.out.println("Today is Sunday");
             default -> System.out.println("Invalid day");
-            
+
         }
 
         
     }
 }
+// testing connection with github
