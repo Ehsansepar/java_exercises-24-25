@@ -137,9 +137,31 @@ public class learn {
         //     default -> System.out.println("Invalid day");
 
         // }
---------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------
         // new update
+
+        // do
+
+                Scanner scanner = new Scanner(System.in);
+                String option;
+                
+                do {
+                        System.out.println("entrer un nombre ou 'q' pour quitter : ");
+                        option = scanner.nextLine();
+                        if (!option.equals("q")) {
+                            int nombre = Integer.parseInt(option);
+                            if (nombre % 2 == 0) {
+                                    System.out.println("Le nombre est pair");
+                            } else {
+                                    System.out.println("Le nombre est impair");
+                            }
+                        }
+                }
+                while (!option.equals("q")); {
+                        System.out.println("Au revoir !");
+                }
         
-    }
+                scanner.close();
+        }
 }
 // connected successfully to the github repository
