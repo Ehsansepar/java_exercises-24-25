@@ -142,26 +142,57 @@ public class learn {
 
         // do
 
-                Scanner scanner = new Scanner(System.in);
-                String option;
+        //         Scanner scanner = new Scanner(System.in);
+        //         String option;
                 
-                do {
-                        System.out.println("entrer un nombre ou 'q' pour quitter : ");
-                        option = scanner.nextLine();
-                        if (!option.equals("q")) {
-                            int nombre = Integer.parseInt(option);
-                            if (nombre % 2 == 0) {
-                                    System.out.println("Le nombre est pair");
-                            } else {
-                                    System.out.println("Le nombre est impair");
-                            }
-                        }
-                }
-                while (!option.equals("q")); {
-                        System.out.println("Au revoir !");
-                }
+        //         do {
+        //                 System.out.println("entrer un nombre ou 'q' pour quitter : ");
+        //                 option = scanner.nextLine();
+        //                 if (!option.equals("q")) {
+        //                     int nombre = Integer.parseInt(option);
+        //                     if (nombre % 2 == 0) {
+        //                             System.out.println("Le nombre est pair");
+        //                     } else {
+        //                             System.out.println("Le nombre est impair");
+        //                     }
+        //                 }
+        //         }
+        //         while (!option.equals("q")); {
+        //                 System.out.println("Au revoir !");
+        //         }
         
+        //         scanner.close();
+        // --------------------------------------------------------------------------------------
+        
+        Scanner scanner = new Scanner(System.in);
+        
+        String email;
+        do {
+                System.out.print("Email : ");
+                email = scanner.nextLine();
+
+                // Vérifie si l'email contient à la fois @ ET .com
+                if (!email.contains("@") || !email.contains(".com") || email.indexOf("@") > email.indexOf(".com")) {
+                        System.err.println("Enter a valid Email please!");
+                        continue;
+                }
+
+                System.out.print("Password : ");
+                String password = scanner.nextLine();
+                
+                // Extraire le nom d'utilisateur (tout ce qui est avant @)
+                String username = email.substring(0, email.indexOf("@"));
+                String emailDomain = email.substring(email.indexOf("@") + 1);
+                
+                System.out.printf("Hello %s !\nYour Demain : %s", username, emailDomain);
+                // System.err.println("Enter a valid Email please!");
+                // System.err.println(domain is a 772);
+                
+        }
+                
+        while(!email.contains("@") || !email.contains(".com") || email.indexOf("@") > email.indexOf(".com")); {
                 scanner.close();
+        }
         }
 }
 // connected successfully to the github repository
