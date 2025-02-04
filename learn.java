@@ -98,46 +98,47 @@ public class learn {
         //         break;
         // }
 
-        String name = "Monday";
-        switch (name) {
-            case "Monday":
-                System.out.println("Today is Monday");
-                break;
-            case "Tuesday":
-                System.out.println("Today is Tuesday");
-                break;
-            case "Wednesday":
-                System.out.println("Today is Wednesday");
-                break;
-            case "Thursday":
-                System.out.println("Today is Thursday");
-                break;
-            case "Friday":
-                System.out.println("Today is Friday");
-                break;
-            case "Saturday":
-                System.out.println("Today is Saturday");
-                break;
-            case "Sunday":
-                System.out.println("Today is Sunday");
-                break;
-            default:
-                System.out.println("Invalid day");
-                break;
-        }
+        // String name = "Monday";
+        // switch (name) {
+        //     case "Monday":
+        //         System.out.println("Today is Monday");
+        //         break;
+        //     case "Tuesday":
+        //         System.out.println("Today is Tuesday");
+        //         break;
+        //     case "Wednesday":
+        //         System.out.println("Today is Wednesday");
+        //         break;
+        //     case "Thursday":
+        //         System.out.println("Today is Thursday");
+        //         break;
+        //     case "Friday":
+        //         System.out.println("Today is Friday");
+        //         break;
+        //     case "Saturday":
+        //         System.out.println("Today is Saturday");
+        //         break;
+        //     case "Sunday":
+        //         System.out.println("Today is Sunday");
+        //         break;
+        //     default:
+        //         System.out.println("Invalid day");
+        //         break;
+        // }
 
-        switch(name) {
-            case "Moday" -> System.out.println("Today is Monday");
-            case "Tuesday" -> System.out.println("Today is Tuesday");
-            case "Wednesday" -> System.out.println("Today is Wednesday");
-            case "Thursday" -> System.out.println("Today is Thursday");
-            case "Friday" -> System.out.println("Today is Friday");
-            case "Saturday" -> System.out.println("Today is Saturday");
-            case "Sunday" -> System.out.println("Today is Sunday");
-            default -> System.out.println("Invalid day");
+        // switch(name) {
+        //     case "Moday" -> System.out.println("Today is Monday");
+        //     case "Tuesday" -> System.out.println("Today is Tuesday");
+        //     case "Wednesday" -> System.out.println("Today is Wednesday");
+        //     case "Thursday" -> System.out.println("Today is Thursday");
+        //     case "Friday" -> System.out.println("Today is Friday");
+        //     case "Saturday" -> System.out.println("Today is Saturday");
+        //     case "Sunday" -> System.out.println("Today is Sunday");
+        //     default -> System.out.println("Invalid day");
 
-        }
-
+        // }
+--------------------------------------------------------------------------------------
+        // new update
         
     }
 }
