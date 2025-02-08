@@ -1,9 +1,10 @@
+package small_project;
+
 import java.util.Scanner;
 
-public class test {
+public class dimensions_row_columns {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        
         int row;
         int columns;
         char symbol;
@@ -27,5 +28,5 @@ public class test {
 
 
         scanner.close();
-    }   
+    }
 }
