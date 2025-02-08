@@ -34,7 +34,7 @@ public class weight_converter {
         }
 
         scanner.close();
-
+        
 
     }
 }

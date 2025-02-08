@@ -164,35 +164,53 @@ public class learn {
         //         scanner.close();
         // --------------------------------------------------------------------------------------
         
-        Scanner scanner = new Scanner(System.in);
+        // Scanner scanner = new Scanner(System.in);
         
-        String email;
-        do {
-                System.out.print("Email : ");
-                email = scanner.nextLine();
+        // String email;
+        // do {
+        //         System.out.print("Email : ");
+        //         email = scanner.nextLine();
 
-                // Vérifie si l'email contient à la fois @ ET .com
-                if (!email.contains("@") || !email.contains(".com") || email.indexOf("@") > email.indexOf(".com")) {
-                        System.err.println("Enter a valid Email please!");
-                        continue;
+        //         // Vérifie si l'email contient à la fois @ ET .com
+        //         if (!email.contains("@") || !email.contains(".com") || email.indexOf("@") > email.indexOf(".com")) {
+        //                 System.err.println("Enter a valid Email please!");
+        //                 continue;
+        //         }
+
+        //         System.out.print("Password : ");
+        //         String password = scanner.nextLine();
+                
+        //         // Extraire le nom d'utilisateur (tout ce qui est avant @)
+        //         String username = email.substring(0, email.indexOf("@"));
+        //         String emailDomain = email.substring(email.indexOf("@") + 1);
+                
+        //         System.out.printf("Hello %s !\nYour Demain : %s", username, emailDomain);
+        //         // System.err.println("Enter a valid Email please!");
+        //         // System.err.println(domain is a 772);
+                
+        // }
+                
+        // while(!email.contains("@") || !email.contains(".com") || email.indexOf("@") > email.indexOf(".com")); {
+        //         scanner.close();
+        // }
+
+
+
+        // nested loop
+        
+        for (int i = 0; i<=3; i++) {
+                for (int j = 0; j<=10;j++) {
+                        System.out.print(j + " ");
                 }
+                System.out.println();
+        }
 
-                System.out.print("Password : ");
-                String password = scanner.nextLine();
-                
-                // Extraire le nom d'utilisateur (tout ce qui est avant @)
-                String username = email.substring(0, email.indexOf("@"));
-                String emailDomain = email.substring(email.indexOf("@") + 1);
-                
-                System.out.printf("Hello %s !\nYour Demain : %s", username, emailDomain);
-                // System.err.println("Enter a valid Email please!");
-                // System.err.println(domain is a 772);
-                
-        }
-                
-        while(!email.contains("@") || !email.contains(".com") || email.indexOf("@") > email.indexOf(".com")); {
-                scanner.close();
-        }
-        }
+}
 }
 // connected successfully to the github repository
+
+// --------------------------------------------------------------------------------
+
+        
+
+
