@@ -28,9 +28,17 @@ public class bank_system {
             switch (choice) {
                 case (1):
                     showBalance(balance);
-                break;
-                // case 1 -> System.out.println("Show balance ");
-                // default -> System.out.println("hi");
+                    break;
+                case (2) :
+                    balance += deposit(balance);
+                    break;
+                case (3) :
+                    // withdraw();
+                    break;
+                case (4) :
+                    isRunning = false;
+                default :
+                    System.out.println("Invalid Number");
             }
         }
     }
@@ -44,11 +52,15 @@ public class bank_system {
         double amount;
 
         System.out.print("Enter an amout to be deposited : ");
-        amount = scanner.nextInt();
+        amount = scanner.nextDouble();
 
-        amount += balance;
-        
-        return amount;
+        if (amount < 0) {
+            System.out.println("The amount can't be negative ");
+            return balance;  // Return unchanged balance if amount is negative
+        }
+        else {
+            return amount;
+        }
     }
     
 }
