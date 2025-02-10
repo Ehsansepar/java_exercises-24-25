@@ -62,5 +62,9 @@ public class bank_system {
             return amount;
         }
     }
+
+    static double withdraw() {
+        // will done another
+    }
     
 }
