@@ -39,5 +39,16 @@ public class bank_system {
         System.out.printf("%.2f\n",balance);
         // return 0;
     }
+
+    static double deposit(double balance) {
+        double amount;
+
+        System.out.print("Enter an amout to be deposited : ");
+        amount = scanner.nextInt();
+
+        amount += balance;
+        
+        return amount;
+    }
     
 }
