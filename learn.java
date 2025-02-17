@@ -213,27 +213,27 @@ public class learn {
 
 
 
-String[] fruits;
-        int size;
+// String[] fruits;
+//         int size;
 
-        Scanner scanner = new Scanner(System.in);
+//         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Combien fruit vous voulez entrez : ");
-        size = scanner.nextInt();
-        scanner.nextLine(); // Pour consommer le caractère de nouvelle ligne
+//         System.out.print("Combien fruit vous voulez entrez : ");
+//         size = scanner.nextInt();
+//         scanner.nextLine(); // Pour consommer le caractère de nouvelle ligne
 
-        fruits = new String[size];
+//         fruits = new String[size];
 
-        for (int i=0; i<fruits.length;i++) {
-            System.out.print("Entrez nom fruit : ");
-            fruits[i] = scanner.nextLine();
-        }
+//         for (int i=0; i<fruits.length;i++) {
+//             System.out.print("Entrez nom fruit : ");
+//             fruits[i] = scanner.nextLine();
+//         }
         
-        for (String fruit : fruits) {
-            System.out.println(fruit);
-        }
+//         for (String fruit : fruits) {
+//             System.out.println(fruit);
+//         }
 
-        scanner.close();
+//         scanner.close();
 
         
 
