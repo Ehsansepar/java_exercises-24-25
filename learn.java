@@ -211,6 +211,30 @@ public class learn {
 
 // --------------------------------------------------------------------------------
 
+
+
+String[] fruits;
+        int size;
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Combien fruit vous voulez entrez : ");
+        size = scanner.nextInt();
+        scanner.nextLine(); // Pour consommer le caractère de nouvelle ligne
+
+        fruits = new String[size];
+
+        for (int i=0; i<fruits.length;i++) {
+            System.out.print("Entrez nom fruit : ");
+            fruits[i] = scanner.nextLine();
+        }
+        
+        for (String fruit : fruits) {
+            System.out.println(fruit);
+        }
+
+        scanner.close();
+
         
 
 
