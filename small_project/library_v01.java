@@ -6,7 +6,9 @@ class library_v01 {
     public static ArrayList<Integer> id = new ArrayList<Integer>();
     public static ArrayList<String> titres = new ArrayList<String>();
     public static ArrayList<String> authors = new ArrayList<String>();
+    public static ArrayList<Boolean> status = new ArrayList<Boolean>();
 
+// *********************************************************************************
     public static String afficherBooks(ArrayList<Integer> id, ArrayList<String> titres, ArrayList<String> authors) {
         if (id.isEmpty() || titres.isEmpty() || authors.isEmpty()) {
             return "No books available.";
@@ -22,7 +24,7 @@ class library_v01 {
         }
         return result;
     }
-
+// *********************************************************************************
     public static void addBook(Scanner scanner) {
         System.out.print("Entrez le titre du livre : ");
         String title = scanner.nextLine();
@@ -34,7 +36,7 @@ class library_v01 {
         id.add(titres.size());
         System.out.println("Livre ajouté.\n");
     }
-
+// *********************************************************************************
     public static void deleteBook(Scanner scanner) {
         System.out.print("Entrez l'ID du livre a supprimer : ");
         int ids = scanner.nextInt();
@@ -48,7 +50,7 @@ class library_v01 {
         id.remove((ids-1));
         System.out.println("Livre supprimé.\n");
     }
-
+// *********************************************************************************
     public static void updateBook(Scanner scanner) {
         System.out.print("Entrez l'ID du livre a modifier : ");
         int ids = scanner.nextInt();
@@ -82,18 +84,18 @@ class library_v01 {
         }
         System.out.println("Livre modifié.\n");
     }
-
+// *********************************************************************************
     public static void menu() {
         System.out.println("1. Afficher la liste des livres");
         System.out.println("2. Ajouter un livre");
         System.out.println("3. Supprimer un livre");
         System.out.println("4. Modifier un livre");
-        System.out.println("5. Quitter");
+        System.out.println("5. Rechercher un livre");
+        System.out.println("6. Afficher les livres empruntés");
+        System.out.println("7. Quitter");
         System.out.println();
     }
-
-    
-
+// *********************************************************************************
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -121,6 +123,15 @@ class library_v01 {
                     updateBook(scanner);
                     break;
                 case 5:
+                    System.out.println(afficherBooks(id, titres, authors));
+                    // searchBook(scanner);
+                    break;
+                case 6:
+                    // displayBorrowedBooks();
+                    // System.out.println(afficherBooks(id, titres, authors));
+                    break;
+                case 7:
+                    System.out.println("Goodbye!");
                     break;
                 default:
                     System.out.println("Invalid Number");
