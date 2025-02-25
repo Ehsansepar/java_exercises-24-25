@@ -9,18 +9,19 @@ class library_v01 {
     public static ArrayList<Boolean> status = new ArrayList<Boolean>();
 
 // *********************************************************************************
-    public static String afficherBooks(ArrayList<Integer> id, ArrayList<String> titres, ArrayList<String> authors) {
+    public static String afficherBooks(ArrayList<Integer> id, ArrayList<String> titres, ArrayList<String> authors, ArrayList<Boolean> status) {
         if (id.isEmpty() || titres.isEmpty() || authors.isEmpty()) {
             return "No books available.";
         }
-        if (id.size() != titres.size() || id.size() != authors.size()) {
+        if (id.size() != titres.size() || id.size() != authors.size() || id.size() != status.size()) {
             return "Error: Lists are not of the same size.";
         }
         String result = "";
         for (int i = 0; i < titres.size(); i++) {
             result +=   "ID: " + id.get(i) +
                         " | Titre: " + titres.get(i) +
-                        " | Auteur: " + authors.get(i) + "\n";
+                        " | Auteur: " + authors.get(i) +
+                        " | Statut: " + status.get(i) + "\n";
         }
         return result;
     }
@@ -34,6 +35,7 @@ class library_v01 {
         String author = scanner.nextLine();
         authors.add(author);
         id.add(titres.size());
+        status.add(true);
         System.out.println("Livre ajouté.\n");
     }
 // *********************************************************************************
@@ -48,6 +50,7 @@ class library_v01 {
         titres.remove((ids-1));
         authors.remove((ids-1));
         id.remove((ids-1));
+        status.remove((ids-1));
         System.out.println("Livre supprimé.\n");
     }
 // *********************************************************************************
@@ -65,24 +68,42 @@ class library_v01 {
         do {
             System.out.println("1. Modifier le titre");
             System.out.println("2. Modifier le nom de l'auteur");
+            System.out.println("3. Modifier le statut");
             System.out.print("-> : ");
             choix = scanner.nextLine().trim();
             
-            if (!choix.equals("1") && !choix.equals("2")) {
-                System.out.println("Choix invalide. Veuillez choisir 1 ou 2.\n");
+            if (!choix.equals("1") && !choix.equals("2") && !choix.equals("3")) {
+                System.out.println("Choix invalide. Veuillez choisir 1, 2 ou 3.\n");
             }
-        } while (!choix.equals("1") && !choix.equals("2"));
+        } while (!choix.equals("1") && !choix.equals("2") && !choix.equals("3"));
 
         if (choix.equals("1")) {
             System.out.print("Entrez le nouveau titre : ");
             String title = scanner.nextLine();
             titres.set(ids-1, title);
-        } else {
+        } else if (choix.equals("2")) {
             System.out.print("Entrez le nouveau nom de l'auteur : ");
             String author = scanner.nextLine();
             authors.set(ids-1, author);
+        } else {
+            System.out.print("Entrez le nouveau statut (true/false) : ");
+            String statusInput = scanner.nextLine().toLowerCase();
+            boolean newStatus = statusInput.equals("true");
+            status.set(ids-1, newStatus);
         }
         System.out.println("Livre modifié.\n");
+    }
+// *********************************************************************************
+    public static void statusBook(Scanner scanner) {
+        System.out.print("Entrez l'ID du livre : ");
+        int ids = scanner.nextInt();
+        scanner.nextLine(); // Consume newline after nextInt()
+        
+        if (ids <= 0 || ids > titres.size()) {
+            System.out.println("Livre non trouvé.");
+            return;
+        }
+        System.out.println("Le statut du livre est : " + status.get(ids-1));
     }
 // *********************************************************************************
     public static void menu() {
@@ -109,21 +130,21 @@ class library_v01 {
 
             switch (choice) {
                 case 1:
-                    System.out.println(afficherBooks(id, titres, authors));
+                    System.out.println(afficherBooks(id, titres, authors, status));
                     break;
                 case 2:
                     addBook(scanner);
                     break;
                 case 3:
-                    System.out.println(afficherBooks(id, titres, authors));
+                    System.out.println(afficherBooks(id, titres, authors, status));
                     deleteBook(scanner);
                     break;
                 case 4:
-                    System.out.println(afficherBooks(id, titres, authors));
+                    System.out.println(afficherBooks(id, titres, authors, status));
                     updateBook(scanner);
                     break;
                 case 5:
-                    System.out.println(afficherBooks(id, titres, authors));
+                    System.out.println(afficherBooks(id, titres, authors, status));
                     // searchBook(scanner);
                     break;
                 case 6:
