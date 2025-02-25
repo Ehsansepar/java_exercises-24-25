@@ -32,6 +32,7 @@ class library_v01 {
         String author = scanner.nextLine();
         authors.add(author);
         id.add(titres.size());
+        System.out.println("Livre ajouté.\n");
     }
 
     public static void deleteBook(Scanner scanner) {
@@ -45,6 +46,41 @@ class library_v01 {
         titres.remove((ids-1));
         authors.remove((ids-1));
         id.remove((ids-1));
+        System.out.println("Livre supprimé.\n");
+    }
+
+    public static void updateBook(Scanner scanner) {
+        System.out.print("Entrez l'ID du livre a modifier : ");
+        int ids = scanner.nextInt();
+        scanner.nextLine(); // Consume newline after nextInt()
+        
+        if (ids <= 0 || ids > titres.size()) {
+            System.out.println("Livre non trouvé.");
+            return;
+        }
+
+        String choix;
+        do {
+            System.out.println("1. Modifier le titre");
+            System.out.println("2. Modifier le nom de l'auteur");
+            System.out.print("-> : ");
+            choix = scanner.nextLine().trim();
+            
+            if (!choix.equals("1") && !choix.equals("2")) {
+                System.out.println("Choix invalide. Veuillez choisir 1 ou 2.\n");
+            }
+        } while (!choix.equals("1") && !choix.equals("2"));
+
+        if (choix.equals("1")) {
+            System.out.print("Entrez le nouveau titre : ");
+            String title = scanner.nextLine();
+            titres.set(ids-1, title);
+        } else {
+            System.out.print("Entrez le nouveau nom de l'auteur : ");
+            String author = scanner.nextLine();
+            authors.set(ids-1, author);
+        }
+        System.out.println("Livre modifié.\n");
     }
 
     public static void menu() {
@@ -56,6 +92,7 @@ class library_v01 {
         System.out.println();
     }
 
+    
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -76,10 +113,12 @@ class library_v01 {
                     addBook(scanner);
                     break;
                 case 3:
+                    System.out.println(afficherBooks(id, titres, authors));
                     deleteBook(scanner);
                     break;
                 case 4:
-                    // updateBook(books);
+                    System.out.println(afficherBooks(id, titres, authors));
+                    updateBook(scanner);
                     break;
                 case 5:
                     break;
